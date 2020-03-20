@@ -71,9 +71,9 @@ In the graph below, I tested each neural network's avg BCE loss per video after 
 
 <img src="/Data/Part II/BCEComparisonTest.png">
 
-Comparing the predictions of each neural network makes the performance differences more clear. While all the models seem to predict motion relatively well, the hierarchy is clearly encoding and predicting shape better than the other two models. In the image comparison below, for example, the hierarchy is clearly encoding the tall skinny rectangle shape much better than the other neural nets. Just about every visual comparison shows similar results (see Data/PartII for more results). The PCUs seem only able to generate elongated ovals with fuzzy boundaries, will the hierarchy is able to generate more rectangular shapes with sharper edges.
+Comparing the predictions of each neural network makes the performance differences more clear. While all the models seem to predict motion relatively well, the hierarchy is clearly encoding and predicting shape better than the other two models. In the image comparison below, for example, the hierarchy is clearly encoding the tall skinny rectangle shape much better than the other neural nets. Just about every visual comparison shows similar results (see Data/PartII for more results). The PCUs seem only able to generate elongated ovals with fuzzy boundaries, will the hierarchy is able to generate more rectangular shapes with sharper edges. See 'Data/Part II' for more images.
 
-<img src="/Data/Part II/BCEComparison.png">
+<img src="/Data/Part II/predCompare6.png">
 
 
 ## 5. Discussion
