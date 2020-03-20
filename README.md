@@ -34,7 +34,7 @@ Each network took an error signal as input. The error signal was, as noted above
 
 Each network performed slightly differently. Below you will see a comparison of their BCE loss over the same 500 test videos. The BCE was averaged over each video and plotted. The mean of the average BCE per video across the 500 videos is as follows for each network: Linear = .329, Convlutional = .346, VAE = .332. The standard deviations of BCE across the 500 videos were: Linear = .107, Convlutional = .12, VAE = .107.
 
-!['BCE TEST'](/Final-Project-NN/Data/Part I/BCEComparePartI.png)
+!['BCE TEST']("/Final-Project-NN/Data/Part I/BCEComparePartI.png")
 
 
 
