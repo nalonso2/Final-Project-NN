@@ -14,7 +14,7 @@
   
   Each video started with a rectangle positioned randomly somewhere around the center, then proceeded to move until it left the screen. Each video was a 4D pytorch tensor, (batch, frameHeight, frameWidth, frameNumber). These were loaded into a dictionary. Using a dictionary allowed me to store videos of varying length in the same data structure. This would not be possible if I had instead padded the videos to all be the same length and stored them in a tensor. I tried the padding technique, but it affecting the results (likely because many videos were quite short and needed a lot of padding). So I decided to not use padding, but instead store the videos in a dictionary without padding.
 
-## 3. PartI: Three Simple Predictive Coding Units
+## 3. Part I: Three Simple Predictive Coding Units
 
   The first part of my project consisted of building and experimenting with single predictive coding units with various kinds of layers, activation functions, and size. I present three of these units here. Each predictive coding unit can be seen as special kind of autoencoder. It is important, first, to keep in mind the predictive coding unit is not just generating an image, but is predicting a future image in a video. Second, the encoder of the PCU does not take in an image as input, but rather takes in an error signal as input, which I will explain below. Third, predictive coding units can be combined into a hiearchy of units and take in input from units higher-up in the hierarchy. I focus on building hiearchy in the next section. Here I will only focus on building a single predictive coding unit.
   
