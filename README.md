@@ -39,9 +39,10 @@ Below you will see a side by side comparison of video frames and the predictions
 It becomes clear that both the VAE and the linear PCU predict motion, as they eventually stop generating the previous frame and begin predicting that the shape will be in a different position than it was last frame (i.e. that it will move). Neither, however, seem particularly good at generating the shape of the rectangle. Both generate elongated ovals with fuzzy boundaries. The convolutional PCU generates shape much better, it is less clear, however, whether it is predicting motion or just generating the previous frame with some noise.
 
 ### 3.3 Discussion
-  The convolutional autoencoder seemed 
-
-
+  The convolutional autoencoder generated shape far better than the VAE or the linear layer, but it was not clear from the images, if or how well it was predicting motion. This may help explain why its average BCE over the test videos was higher than it was for the other two networks. The convolutional autoencoder also generated images with sharper boundaries around the shape than the other two neural networks did, which may have also contributed its greater BCE (large and small pixel values would generate larger errors if wrong). The VAE and the linear PCU predicted motion clearly, but were not good at predicting shape. A convolutional autoencoder could likely be made to predict motion better if more channels were included and more layers.
+  
+  
+  
 ## 4. PartII: Hierarchy of Predictive Coding Units
   Next, I created a hierarchy of PCUs. Rao and Ballard (1999) argued that the cortical areas of the brain can be seen as hierarchies of predictive coding units. Each unit attempts to predict the neural activity of the hidden layers/representations of PCUs at lower levels in the hierarchy. An error signal is propagated forward based on the difference between the predicted neural activity and the actual neural activity. In addition to the bottom up error signal, the activity in PCU hidden layers is influenced by the top down prediction of the hidden layer. Rao and Ballard (1999) implemented this top-down influence by taking the error between the neural activity of a PCU's hidden layer (r) and its top-down prediction: r - r<sub>topdown</sub>. Then they inputted this top-down error into the encoder of the PCU, so now the encoder takes as input the bottom-up error (the error in its prediction of a lower unit's r) and the top down error (a higher units prediction of its r) and outputs a compressed representation r of lower level neural activity. 
 
